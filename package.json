@@ -12,8 +12,7 @@
     },
     "scripts": {
         "build": "rm -rf dist && tsc && cp -r src/assets dist/assets",
-        "prepublish": "npm run build",
-        "postinstall": "node dist/postinstall.js && mkdir -p $INIT_CWD/.github/workflows && cp dist/assets/action.yml $INIT_CWD/.github/workflows/static-site-gen-deploy.yml"
+        "prepublish": "npm run build"
     },
     "repository": {
         "type": "git",
