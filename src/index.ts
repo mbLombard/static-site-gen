@@ -11,7 +11,7 @@ import init from './install';
     //add the following line
     const program = new Command();
 
-    console.log(chalk.whiteBright.bgGreenBright('\n  Jakyll.js  \n'));
+    console.log(chalk.whiteBright.bgGreenBright('\n  static-site-gen.js  \n'));
 
     program
         .version('0.5.7')

@@ -2,6 +2,9 @@ import chalk from 'chalk';
 import fileRead from './utils/file';
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export default async () => {
     console.log(chalk.yellowBright('Initializing...'));
@@ -13,10 +16,10 @@ export default async () => {
     const pkg = JSON.parse(fileRead(pkgPath)!);
 
     const scriptsToAdd = {
-        dev: 'jakyll -dev',
-        build: 'jakyll -build',
-        start: 'jakyll -start',
-        deploy: 'jakyll -deploy',
+        dev: 'static-site-gen -dev',
+        build: 'static-site-gen -build',
+        start: 'static-site-gen -start',
+        deploy: 'static-site-gen -deploy',
     };
 
     Object.entries(scriptsToAdd).forEach(([key, script]) => {

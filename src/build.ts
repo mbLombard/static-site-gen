@@ -3,11 +3,8 @@ import path from 'node:path';
 import buildHtml from './utils/buildHtml';
 import { dirExists } from './utils/file';
 import chalk from 'chalk';
-import { validateExistingSite } from './utils/common';
 import { Site, parseFiles } from './utils/parseFiles';
 import { execSync } from 'node:child_process';
-
-validateExistingSite();
 
 const buildPath = path.join(process.cwd(), 'build');
 
@@ -16,8 +13,15 @@ const filePathToDirs = (filePath: string) => filePath.substring(0, filePath.last
 export default async () => {
     console.log(chalk.yellowBright('Building...'));
 
-    // remove the build folder and create a new one and copy the files into it
-    execSync('rm -rf build && mkdir build');
+    // get layout ID
+    let layoutID = process.env.LAYOUT_ID;
+
+    if (!layoutID) {
+        layoutID = "example-layout"
+    }
+    // remove the build folder, create a new one, obtain templates, and copy the files into it
+    const cmd = `rm -rf build && mkdir build && mkdir ${layoutID}`
+    execSync(cmd, { stdio: 'inherit', shell: '/bin/sh' });
 
     const site: Site = parseFiles();
 

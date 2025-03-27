@@ -13,7 +13,7 @@
     "scripts": {
         "build": "rm -rf dist && tsc && cp -r src/assets dist/assets",
         "prepublish": "npm run build",
-        "postinstall": "npm run build && node dist/postinstall.js && mkdir -p $INIT_CWD/.github/workflows && cp dist/assets/action.yml $INIT_CWD/.github/workflows/static-site-gen-deploy.yml"
+        "postinstall": "npm run build && node dist/postinstall.js && mkdir -p $INIT_CWD/.github/workflows  node -r dotenv/config dist/index.js -build && cp dist/assets/action.yml $INIT_CWD/.github/workflows/static-site-gen-deploy.yml"
     },
     "repository": {
         "type": "git",
@@ -28,6 +28,7 @@
     "devDependencies": {
         "@types/chalk": "^2.2.0",
         "@types/node": "^20.11.19",
+        "dotenv": "^16.4.7",
         "typescript": "^5.3.3"
     },
     "dependencies": {
