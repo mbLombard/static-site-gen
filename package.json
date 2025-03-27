@@ -4,7 +4,7 @@
     "description": "Static site generation alternative to Jekyll",
     "type": "commonjs",
     "bin": {
-        "jakyll": "dist/index.js"
+        "static-site-gen": "dist/index.js"
     },
     "engines": {
         "npm": ">=8",
@@ -13,7 +13,7 @@
     "scripts": {
         "build": "rm -rf dist && tsc && cp -r src/assets dist/assets",
         "prepublish": "npm run build",
-        "postinstall": "node dist/postinstall.js && mkdir -p $INIT_CWD/.github/workflows && cp dist/assets/action.yml $INIT_CWD/.github/workflows/jakyll-deploy.yml"
+        "postinstall": "node dist/postinstall.js && mkdir -p $INIT_CWD/.github/workflows && cp dist/assets/action.yml $INIT_CWD/.github/workflows/static-site-gen-deploy.yml"
     },
     "repository": {
         "type": "git",
