@@ -1,7 +1,7 @@
 {
-    "name": "jakyll",
-    "version": "0.5.7",
-    "description": "Node.js Jekyll alternative",
+    "name": "static-site-gen",
+    "version": "0.0.1",
+    "description": "Static site generation alternative to Jekyll",
     "type": "commonjs",
     "bin": {
         "jakyll": "dist/index.js"
@@ -17,14 +17,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/iambriansreed/jakyll.git"
+        "url": "git+https://github.com/mbLombard/static-site-gen.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/iambriansreed/jakyll/issues"
+        "url": "https://github.com/mbLombard/static-site-gen/issues"
     },
-    "homepage": "https://github.com/iambriansreed/jakyll#readme",
+    "homepage": "https://github.com/mbLombard/static-site-gen#readme",
     "devDependencies": {
         "@types/chalk": "^2.2.0",
         "@types/node": "^20.11.19",
