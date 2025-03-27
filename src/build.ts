@@ -20,7 +20,7 @@ export default async () => {
         layoutID = "example-layout"
     }
     // remove the build folder, create a new one, obtain templates, and copy the files into it
-    const cmd = `rm -rf build && mkdir build && mkdir ${layoutID}`
+    const cmd = `rm -rf build && mkdir build`
     execSync(cmd, { stdio: 'inherit', shell: '/bin/sh' });
 
     const site: Site = parseFiles();
